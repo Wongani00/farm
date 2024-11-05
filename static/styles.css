@@ -1,0 +1,471 @@
+/* customizing the base template */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 180px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    transition: scale 0.2s ease;
+  }
+   
+  .sidebar a.active {
+    background-color: midnightblue;
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+    font-weight: bold;
+    scale: 1.04;
+    text-decoration: none;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 100%;
+  }
+  
+  /* .sidebar a .icon{
+    color: yellow;
+  } */
+
+  /* styling pages main content area */
+  #home-content, #predict-content, #dashboard-content, #about-content{
+    margin-left: 188px;
+    background-color: #f1f1f1;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+  }
+  #form{
+    margin-left: 20%;
+    max-width: 450px;
+  }
+  input{
+    width: 60%;
+}
+
+/* styling the home page */
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+.welcome{
+  box-sizing: border-box;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1.9em;
+  font-weight: bold;
+  z-index: 1;
+  margin-bottom: 30px;
+  /* animation: typing 10s steps(60) infinite alternate, blink .3s step-end infinite; */
+  white-space: nowrap;
+  overflow: hidden;
+  /* border-right: 3px solid; */
+}
+@keyframes typing{
+  0%{
+    width: 0;
+  }
+  50%{
+    width: 28ch;
+  }
+  100%{
+    width: 0;
+  }
+}
+@keyframes blink{
+  0%, 100%{
+    border-color: transparent;
+  }
+  50%{
+    border-color: black;
+  }
+}
+.home a{
+  color: black;
+  background-color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  z-index: 1;
+  /* font-weight: bold; */
+  border-radius: 50px;
+  transition: scale 0.2s ease;
+}
+.home a:hover:not(.active){
+  scale: 0.9;
+  font-weight: bold;
+}
+
+
+/* styling about page */
+.about{
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+/* the predict page's script */
+.prediction-area{
+    width: 100%;
+    max-width: 500px;
+    margin-left: 20%;
+    background-color: white;
+    padding: 60px;
+    border: #555;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.form{
+    width: 400px;
+    max-width: 400px;
+}
+
+/* styling the header */
+center{
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+label{
+    margin-bottom: 3px;
+    font-size: 1.2rem;
+    font-weight: 490;
+}
+
+#commodity, #date, #region, #market{
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    cursor: text;
+    background-color: #f1f1f1;
+}
+
+#predict-btn{
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    /* background-color: #04AA6D; */
+    background-color: midnightblue;
+    color: white;
+    outline: none;
+    border: none;
+    transition: scale 0.2s ease;
+}
+#predict-btn:hover{
+    font-weight: bold;
+    background-color: blue;
+    border: none;
+    outline: none;
+}
+
+
+/* responsive designs */
+@media screen and (max-width: 1200px){
+  .prediction-area{
+    padding: 40px;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left; margin-right: 5em;}
+  div.content {margin-left: 0;}
+  .sidebar a #about {right: 2px;}
+
+  #home-content, #predict-content, #dashboard-content, #about-content {
+      margin: 0 auto;
+      background-color: #f1f1f1;
+      width: 100%;
+  }
+
+  .prediction-area {
+      padding: 30px;
+      width: 100%; /* Full width for smaller screens */
+      margin: 0 auto; /* Centering the form */
+  }
+
+  .form {
+      width: 100%; /* Full width for smaller screens */
+      max-width: 400px;
+      margin: 0 auto;
+  }
+
+  #commodity, #date, #region, #market {
+      width: 100%; /* Full width for form elements */
+  }
+
+}
+
+@media screen and (max-width: 580px){
+  #home-content,#about-content{
+    padding: 0.3rem;
+  }
+  #predict-content{
+    padding: 3rem;
+  }
+  .home .welcome{
+    text-align: center;
+  }
+  .sidebar a {float: left; margin-right: 2em;}
+  .prediction-area {
+    padding: 20px; /* Reduce padding for very small screens */
+    margin:  auto;
+}
+ 
+}
+@media screen and (max-width: 528px){
+  .home .welcome{
+    font-size: 25px;
+    
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #home-content, #about-content{
+    padding: 0px;
+  }
+  #predict-content{
+    padding: 1.7rem;
+  }
+  .welcome{
+    font-size: 1.3rem;
+  }
+  .prediction-area {
+      padding: 20px; /* Reduce padding for very small screens */
+      margin: 0 auto;
+  }
+  label {
+      font-size: 1rem; /* Reduce font size for labels */
+  }
+  .form{
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  #predict-btn {
+      font-size: 1rem; /* Adjust button font size */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    margin-right: 0.5em;
+    text-align: center;
+    float: left;
+    padding: 10px;
+    /* position: fixed; */
+  }
+  #home-content, #dashboard-content, #about-content{
+    padding: 6px;
+    margin: 0;
+  }
+  #predict-content{
+    padding: 1.2rem;
+  }
+  .home{
+    height: 70vh;
+  }
+  .welcome{
+    font-size: 1.1rem;
+  }
+  .home a{
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+  .prediction-area {
+    padding: 18px; /* Reduce padding for very small screens */
+    margin: 0 auto;
+}
+center{
+  font-weight: 350;
+}
+#commodity, #date, #region, #market{
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+}
+
+/* @media screen and (max-width: 770px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+  .sidebar a #about {right: 2px;}
+} */
+
+
+/* about page */
+#about-content {
+  overflow-y: scroll;
+  margin-left: 188px;
+  background-color: #f1f1f1;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  backdrop-filter: blur(10px);
+  width: calc(100% - 188px);
+  height: 100%;
+}
+
+.overview-container {
+  max-width: 1200px;
+  
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+}
+
+.hero-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  /* background: linear-gradient(135deg, #2ecc71, #27ae60); */
+  background-color: midnightblue;
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 2,5vw, 2rem);
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: white;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  /* color: #2ecc71; */
+  color: midnightblue;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h3 {
+  color: #34495e;
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+p {
+  color: #596671;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.tech-badge {
+  background: midnightblue;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 770px) {
+#about-content{
+  margin-left: 0;
+  width: 100%;
+  max-width: 770px;
+}
+  .overview-container {
+      padding: 0.6rem;
+      margin: 0.6rem;
+  }
+
+  .section {
+      padding: 1.2rem;
+  }
+
+  .features-grid {
+      grid-template-columns: 1fr;
+  }
+}
