@@ -1,0 +1,107 @@
+{% extends "base.html" %} 
+
+{%block title%}About{%endblock%}
+
+{% block head %}
+ {{ super() }}
+
+ <link rel="icon" href="static/icons/info.png" type="image/x-icon">
+ <link rel="stylesheet" href="{{url_for('static', filename='css/fontawesome.css')}}">
+ <meta name="description" content="Learn more about our web app that helps predict the prices of maize, rice, and beans. Understand our mission, technology, and how it supports the agricultural community.">
+ 
+{% endblock %}
+
+{%block body%}
+<div id="about-content">
+    <div class="overview-container">
+        <section class="hero-section">
+            <h1 class="hero-title">FARM System Overview</h1>
+            <p class="hero-subtitle">Forecasting Agricultural Revenue Using Machine Learning</p>
+        </section>
+
+        <section class="section">
+            <h2>System Description</h2>
+            <p>FARM is an advanced forecasting system that leverages various Machine Learning algorithms to predict prices of agricultural food products in Malawi, specifically focusing on:</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Beans</h3>
+                    <p>Price forecasting and market analysis for bean crops</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-wheat-awn"></i></div>
+                    <h3>Maize</h3>
+                    <p>Comprehensive price predictions for maize products</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bowl-rice"></i></div>
+                    <h3>Rice</h3>
+                    <p>Market trend analysis and price forecasting for rice</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Machine Learning Integration</h2>
+            <p>The system employs sophisticated machine learning techniques to deliver accurate and timely predictions:</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-database"></i></div>
+                    <h3>Data Processing</h3>
+                    <p>Comprehensive data collection and pre-processing pipeline</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Model Selection</h3>
+                    <p>Advanced algorithm selection and optimization</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Evaluation</h3>
+                    <p>Robust model training and performance evaluation</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Technical Implementation</h2>
+            <p>Our system leverages ensemble machine learning algorithm:</p>
+            <div class="tech-stack">
+                <span class="tech-badge">Random Tree Regressor</span>
+                <!--<span class="tech-badge">Support Vector Machines</span>
+                <span class="tech-badge">Data Analytics</span>
+                <span class="tech-badge">Price Forecasting</span>-->
+            </div>
+            <p class="mt-4">This technologies enable:</p>
+            <ul style="color: #596671; line-height: 1.6; margin-left: 1.5rem;">
+                <li>Detection of complex market patterns</li>
+                <li>Analysis of historical price data</li>
+                <li>Modeling of non-linear relationships</li>
+                <li>Precise price predictions</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Some Benefits & Impact</h2>
+            <p>The FARM system provides crucial benefits to various stakeholders:</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-area"></i></div>
+                    <h3>Market trend analysis</h3>
+                    <p>Price prediction systems enable businesses to anticipate market trend shifts</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-store"></i></div>
+                    <h3>Businesses</h3>
+                    <p>Better supply chain and inventory management</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-tractor"></i></div>
+                    <h3>Farmers</h3>
+                    <p>Improved planning and risk management</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{%endblock%}

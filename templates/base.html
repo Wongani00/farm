@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{%block title%}{%endblock%}</title>
+  {%block head%}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/brands.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/solid.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css')}}">
+  {% endblock %}
+</head>
+<body>
+
+<div class="sidebar">
+  <a href="{{url_for('index')}}" ><i class="fa fa-fw fa-home" class="icon" style="padding-right:5px;"></i> Home</a>
+  
+  <a href="{{url_for('predict')}}"><i class="fa fa-fw fa-chart-line" class="icon" style="padding-right:5px;"></i>Predict</a>
+  <a href="{{url_for('about')}}"  id="about"><i class="fa fa-fw fa-info-circle" class="icon" style="padding-right:5px;"></i>About</a>
+</div>
+
+<div class="content">
+</div>
+
+{%block body%}
+{%endblock%}
+{%block scripts%}
+  <script src="{{url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='scripts.js')}}"></script>
+{%endblock%}
+
+</body>
+</html>

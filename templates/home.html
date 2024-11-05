@@ -1,0 +1,27 @@
+{%extends "base.html"%}
+
+{%block title%}Crop-Price-Forecast{%endblock%}
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+{% block head %}
+ {{ super() }}
+ 
+ <link rel="icon" href="static/icons/home.png" type="image/x-icon">
+ <meta name="description" content="Welcome to our web app for predicting the prices of maize, rice, and beans. Explore current trends and insights for agricultural commodity prices in Malawi.">
+{% endblock %}
+
+{%block body%}
+<div id="home-content"  style='background-image: url({{url_for("static", filename="images/maize-rice-beans.jpeg")}}); opacity: 0.9;'>
+   <div class="home">
+      <p class="welcome">Welcome to FARM,<br> your one-stop solution for predicting <br>rice, beans, and maize prices!</p>
+      <h5><a href="{{url_for('predict')}}"><i class="fa fa-arrow-right" class="icon" style="padding-right:7px;"></i>Predict Prices Now</a></h5>
+   </div>
+</div>
+
+
+
+{%endblock%}
+
+{%block scipts%}
+{{super()}}
+{%endblock%}

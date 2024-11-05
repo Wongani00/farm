@@ -1,0 +1,60 @@
+{#inheriting the contents of the base template#}
+{% extends "base.html" %}
+
+{%block title%}Predict{%endblock%}
+
+{% block head %}
+ {{ super() }}
+ <link rel="icon" href="static/icons/chart-line-solid.png" type="image/x-icon">
+ <meta name="description" content="Predict the prices of maize, rice, and beans with our advanced web app. Get data-driven price forecasts to plan your agricultural activities effectively.">
+
+{% endblock %}
+
+{%block body%}
+<div id="predict-content" >
+    
+    <p>
+        <div class="prediction-area">
+            <form class="form">
+                <center><h5>Predict The Price Of The Commodity</h5></center>
+                <div class="form-group">
+                    <label for="commodity">Select Commodity Name</label>
+                    <select class="form-control" id="commodity" name="commodity" required>
+                        <option>Beans</option>
+                        <option>Maize</option>
+                        <option>Rice</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Enter Date</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="region">Select Region</label>
+                    <select class="form-control" id="region" name="region" required>
+                        {%for region in regions%}
+                            <option value="{{region}}">{{region}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="market">Select Market</label>
+                    <select type="text" class="form-control" id="market" name="market" required>
+                        {%for market in markets.keys()%}
+                            <option value="{{market}}">{{market}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            
+                <button type="submit" class="btn" id="predict-btn">Predict</button>
+                </form>
+                <center>
+                    <p id="result" style="font-size: 1.3rem; font-weight: bold; margin-top: 5px;"></p>
+                </center>
+        </div>
+    </p>
+
+</div>
+{%endblock%}
